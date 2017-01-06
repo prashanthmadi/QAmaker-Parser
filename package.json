@@ -1,0 +1,25 @@
+{
+  "name": "qamaker-parser",
+  "version": "1.0.0",
+  "description": "Convert github content to tsv format",
+  "main": "app.js",
+  "dependencies": {
+    "github-api": "^3.0.0",
+    "tsv": "^0.2.0",
+    "marked": "^0.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prashanthmadi/QAmaker-Parser.git"
+  },
+  "author": "Prashanth Madi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prashanthmadi/QAmaker-Parser/issues"
+  },
+  "homepage": "https://github.com/prashanthmadi/QAmaker-Parser#readme"
+}
