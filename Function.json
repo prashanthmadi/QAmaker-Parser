@@ -17,7 +17,7 @@
     {
       "type": "blob",
       "name": "qamaker",
-      "path": "outcontainer/{github_reponame}.tsv",
+      "path": "outcontainer/{github_username}-{github_reponame}.tsv",
       "connection": "AzureWebJobsStorage",
       "direction": "out"
     }

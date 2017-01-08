@@ -4,9 +4,10 @@
   "description": "Convert github content to tsv format",
   "main": "app.js",
   "dependencies": {
+    "azure-storage": "^1.4.0",
     "github-api": "^3.0.0",
-    "tsv": "^0.2.0",
-    "marked": "^0.3.6"
+    "marked": "^0.3.6",
+    "tsv": "^0.2.0"
   },
   "devDependencies": {},
   "scripts": {
