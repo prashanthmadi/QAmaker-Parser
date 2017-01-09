@@ -5,10 +5,6 @@ const fs = require('fs');
 
 var requestCounter = 1;
 var finalContent = [];
-const gh = new GitHub({
-    token: gitToken
-});
-let repo = gh.getRepo(github_username, github_reponame);
 
 // method to crawl github repo
 var startSpider = function(path) {
@@ -65,7 +61,7 @@ var onCompleted = function(error, data) {
     }
     context.bindings.qamaker = tsv.stringify(finalContent);
     var file_name = github_username + "-" + github_reponame;
-    data += "Please find TSV file for " + file_name + " @ " + getSAS("outcontainer", file_name + ".tsv");
+    data += "Please find TSV file for " + file_name + " @ <a href='" + getSASUrl("outcontainer", file_name + ".tsv")+"'>Link</a>";
     res = {
         status: 200,
         body: data
@@ -79,11 +75,15 @@ exports.gitContent = function(cont, req) {
     github_username = req.body.github_username;
     github_reponame = req.body.github_reponame;
     branch = req.body.branch;
+    const gh = new GitHub({
+        token: gitToken
+    });
+    repo = gh.getRepo(github_username, github_reponame);
     startSpider("");
 }
 
 // return SAS Url
-var getSAS = function(containerName, blobName) {
+var getSASUrl = function(containerName, blobName) {
     var azure = require('azure-storage');
     var blobService = azure.createBlobService(process.env.AzureWebJobsStorage);
     var startDate = new Date();
