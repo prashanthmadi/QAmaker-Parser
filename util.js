@@ -4,7 +4,6 @@ var tsv = require('tsv');
 const fs = require('fs');
 
 var requestCounter = 1;
-var finalContent = [];
 
 // method to crawl github repo
 var startSpider = function(path) {
@@ -79,6 +78,7 @@ exports.gitContent = function(cont, req) {
         token: gitToken
     });
     repo = gh.getRepo(github_username, github_reponame);
+    finalContent = [];
     startSpider("");
 }
 
